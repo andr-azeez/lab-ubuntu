@@ -1,6 +1,6 @@
 apiVersion: 1.0.0
 metadata:
-  name: ubuntu-lab
+  name: centos-lab
 projects:
   - name: bash
     source:
