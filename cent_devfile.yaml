@@ -1,0 +1,28 @@
+apiVersion: 1.0.0
+metadata:
+  name: ubuntu-lab
+projects:
+  - name: bash
+    source:
+      location: 'https://github.com/che-samples/bash'
+      type: git
+      branch: main
+components:
+  - mountSources: true
+    command:
+      - tail
+    args:
+      - '-f'
+      - /dev/null
+    memoryLimit: 512Mi
+    type: dockerimage
+    image: 'docker.io/library/centos:8'
+    alias: centos
+  - id: mads-hartmann/bash-ide-vscode/latest
+    type: chePlugin
+  - id: rogalmic/bash-debug/latest
+    type: chePlugin
+  - id: timonwong/shellcheck/latest
+    preferences:
+      shellcheck.executablePath: /bin/shellcheck
+    type: chePlugin
