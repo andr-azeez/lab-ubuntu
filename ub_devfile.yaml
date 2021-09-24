@@ -14,7 +14,7 @@ components:
     args:
       - '-f'
       - /dev/null
-    memoryLimit: 512Mi
+    memoryLimit: 1024Mi
     type: dockerimage
     image: 'docker.io/library/ubuntu:18.04'
     alias: ubuntu
